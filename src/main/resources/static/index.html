@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spring AI Models</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Spring AI Models</h1>
+    <nav>
+        <button class="tab active" data-target="chat">Chat</button>
+        <button class="tab" data-target="image">Image</button>
+        <button class="tab" data-target="voice">Voice</button>
+    </nav>
+</header>
+
+<main>
+    <!-- CHAT -->
+    <section id="chat" class="panel active">
+        <h2>Text Chat</h2>
+        <label for="provider">Model</label>
+        <select id="provider">
+            <option value="/ai/openAi/generate">OpenAI</option>
+            <option value="/ai/ollama/generate">Ollama</option>
+        </select>
+
+        <label for="chat-prompt">Prompt</label>
+        <textarea id="chat-prompt" rows="4" placeholder="Ask something..."></textarea>
+
+        <button id="chat-send">Send</button>
+
+        <div id="chat-status" class="status"></div>
+        <pre id="chat-output" class="output"></pre>
+    </section>
+
+    <!-- IMAGE -->
+    <section id="image" class="panel">
+        <h2>Image Q&amp;A</h2>
+        <label for="image-file">Upload image</label>
+        <input type="file" id="image-file" accept="image/*">
+        <img id="image-preview" alt="Preview" hidden>
+
+        <label for="image-question">Question about the image</label>
+        <input type="text" id="image-question" placeholder="e.g. What is in this picture?">
+
+        <button id="image-send">Describe</button>
+
+        <div id="image-status" class="status"></div>
+        <pre id="image-output" class="output"></pre>
+    </section>
+
+    <!-- VOICE -->
+    <section id="voice" class="panel">
+        <h2>Voice Assistant</h2>
+        <label for="voice-question">Question</label>
+        <textarea id="voice-question" rows="3" placeholder="Ask something and get a spoken answer..."></textarea>
+
+        <label for="voice-name">Voice</label>
+        <select id="voice-name">
+            <option value="">Default</option>
+            <option value="alloy">Alloy</option>
+            <option value="echo">Echo</option>
+            <option value="fable">Fable</option>
+            <option value="onyx">Onyx</option>
+            <option value="nova">Nova</option>
+            <option value="shimmer">Shimmer</option>
+        </select>
+
+        <button id="voice-send">Ask</button>
+
+        <div id="voice-status" class="status"></div>
+        <pre id="voice-output" class="output"></pre>
+        <audio id="voice-audio" controls hidden></audio>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

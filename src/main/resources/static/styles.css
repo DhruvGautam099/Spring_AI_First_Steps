@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f5f7;
+    color: #222;
+}
+
+header {
+    background: #1f2937;
+    color: #fff;
+    padding: 16px 24px;
+}
+
+header h1 {
+    margin: 0 0 12px;
+    font-size: 22px;
+}
+
+nav {
+    display: flex;
+    gap: 8px;
+}
+
+.tab {
+    background: #374151;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.tab.active {
+    background: #2563eb;
+}
+
+main {
+    max-width: 720px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.panel {
+    display: none;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+}
+
+.panel.active {
+    display: block;
+}
+
+.panel h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #9ca3af;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.panel > button {
+    margin-top: 16px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.panel > button:disabled {
+    background: #93c5fd;
+    cursor: not-allowed;
+}
+
+#image-preview {
+    display: block;
+    max-width: 100%;
+    max-height: 260px;
+    margin-top: 10px;
+    border: 1px solid #d1d5db;
+}
+
+.status {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.status.error {
+    color: #b91c1c;
+}
+
+.output {
+    margin: 10px 0 0;
+    padding: 12px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: inherit;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+.output:empty {
+    display: none;
+}
+
+audio {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+}
